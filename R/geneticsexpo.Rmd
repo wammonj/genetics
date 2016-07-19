@@ -18,5 +18,6 @@ This is a very **IMPORTANT** document.  You can tell because I **bolded** and CA
 Clinics are great places to gather data.  This is no exception.
 
 ```{r sum}
-summary(clinic)
+library(genetics)
+summary(clinicData)
 ```
