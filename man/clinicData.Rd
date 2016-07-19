@@ -4,8 +4,8 @@
 \alias{clinicData}
 \title{Description of clinicData}
 \format{Here are the names of the columns and my guess at what they really are \cr
-\strong{days_to_death} - how many days the patient survived \cr
-\strong{days_to_last_followup} - how many days until the patient has no more chance \cr
+\strong{days_to_death} - how many days the patient survived (patient is dead) \cr
+\strong{days_to_last_followup} - how many days that patient has survived so far (patient is alive) \cr
 \strong{pathologic_grade} - How bad is this tumor \cr
 \strong{pathologic_stage} - How advanced is this tumor \cr
 \strong{sex} - Sex of patient \cr
