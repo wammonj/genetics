@@ -1,0 +1,18 @@
+---
+title: "Data sharing, Version Control, and Visualizations"
+author: "Ammon Washburn"
+date: "July 19, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# Learning github with a non-trivial example
+
+During my time at the **SISBID 2016** I was learning how to use markdown, r, and git to make r packages and save them using version control.  This is the result of my efforts.
+
+## Acknowledgements
+
+I gratefully acknowledge **Roger Penn** and **Keith Baggerly** who provided the data and instruction that lead me to create this site.
