@@ -1,0 +1,28 @@
+---
+title: "Working with the genetics data"
+author: "Ammon Washburn"
+date: "July 18, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+# How to work with this data to see interesting patterns
+
+This is a very **IMPORTANT** document.  You can tell because I **bolded** and CAPITALIZED the word important instead of stressing the word using *italics*.
+
+## Clinic Data
+
+Clinics are great places to gather data.  This is no exception.
+
+## R Markdown
+
+This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. For more details on using R Markdown see <http://rmarkdown.rstudio.com>.
+
+When you click the **Knit** button a document will be generated that includes both content as well as the output of any embedded R code chunks within the document. You can embed an R code chunk like this:
+
+```{r cars, echo=FALSE}
+summary(cars)
+```

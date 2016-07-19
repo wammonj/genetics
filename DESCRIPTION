@@ -1,0 +1,12 @@
+Package: genetics
+Type: Package
+Title: Explore Big Data in Genetics
+Version: 0.1.0
+Author: Ammon Washburn
+Maintainer: Ammon Washburn <wammonj@email.arizona.edu>
+Description: ..
+Depends:
+    R (>= 3.1.1)
+License: CC0
+LazyData: TRUE
+RoxygenNote: 5.0.1
