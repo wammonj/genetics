@@ -9,15 +9,49 @@ output: html_document
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
-# How to work with this data to see interesting patterns
+# Checking the clinic data to make sure it makes sense
 
-This is a very **IMPORTANT** document.  You can tell because I **bolded** and CAPITALIZED the word important instead of stressing the word using *italics*.
+This document is *only* trying to look at the clinic data and check the data for inconsistencies or effects that we don't want
 
 ## Clinic Data
 
-Clinics are great places to gather data.  This is no exception.
+This clinic data has several fields which are explained by the R package "genetics"
+
+```{r description}
+library(genetics)
+?clinicData
+```
+
+Here is a summary of the data so we can get to know the ranges and values of the data.
 
 ```{r sum}
 library(genetics)
+clinicData = data.frame(clinicData)
+numericsInds = c(1,2,6)
+factorInds = c(3,4,5)
+for (i in 1:3){
+  clinicData[,numericsInds[i]] = as.numeric(clinicData[,numericsInds[i]])
+   clinicData[,factorInds[i]] = as.factor(clinicData[,factorInds[i]])
+}
+clinicData[,c(1,2,6)] = as.numeric(clinicData[,c(1,2,6)])
+clinicData[,c(3,4,5)] = as.factor(clinicData[,c(3,4,5)])
 summary(clinicData)
 ```
+
+Lets check the data.  Notice that we should have either just days to death or days to last followup.  In the case we have both, sometimes they are the same and sometimes they are different.  Notice that some had days to death smaller than days to last followup.
+
+It also appears that age doesn't help us know how long they will 
+
+```{r}
+pairs( ~ days_to_death + days_to_last_followup + age_at_diagnosis,data = clinicData)
+```
+
+It would be good to see if sex is important in this study.
+
+```{r}
+compare = c("days_to_death","days_to_last_followup","pathologic_grade","pathologic_stage","age_at_diagnosis")
+total = length(compare)
+par(mfrow = c(1,total))
+for (i in compare){
+  plot(clinicData[,"sex"],clinicData[,i],ylab = i)
+}
